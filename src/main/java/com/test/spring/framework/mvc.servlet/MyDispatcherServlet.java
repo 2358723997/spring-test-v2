@@ -168,7 +168,7 @@ public class MyDispatcherServlet extends HttpServlet {
      * @param req
      * @param resp
      */
-    private void doDispatch(HttpServletRequest req, HttpServletResponse resp) throws InvocationTargetException, IllegalAccessException {
+    private void doDispatch(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         //1、通过URL获得一个HandlerMapping
         MyHandlerMapping handler = getHandler(req);
         if (handler == null) {
@@ -183,7 +183,7 @@ public class MyDispatcherServlet extends HttpServlet {
         processDispatchResult(req, resp, modelAndView);
     }
 
-    private void processDispatchResult(HttpServletRequest req, HttpServletResponse resp, MyModelAndView modelAndView) {
+    private void processDispatchResult(HttpServletRequest req, HttpServletResponse resp, MyModelAndView modelAndView) throws Exception {
         if(modelAndView == null){
             return;
         }
