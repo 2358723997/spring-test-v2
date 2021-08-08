@@ -121,4 +121,8 @@ public class MyBeanDefinitionReader {
         chars[0] +=32;
         return chars.toString();
     }
+
+    public Properties getConfig() {
+        return configProperties;
+    }
 }

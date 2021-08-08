@@ -7,7 +7,7 @@ import java.util.Map;
  */
 public class MyModelAndView {
     private String viewName;
-    private Map<String,?> model;
+    private Map<String, ?> model;
 
     public MyModelAndView(String viewName, Map<String, ?> model) {
         this.viewName = viewName;

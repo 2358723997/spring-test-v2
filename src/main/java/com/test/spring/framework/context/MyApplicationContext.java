@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import com.test.spring.framework.annocation.MyAutowired;
 import com.test.spring.framework.annocation.MyController;
@@ -72,7 +73,7 @@ public class MyApplicationContext {
         MyBeanDefinition beanDefinition = beanDefinitionMap.get(beanName);
         //2、反射实例化newInstance();
         Object instance = instantiateBean(beanName, beanDefinition);
-        //3、封装成eanWrapper
+        //3、封装成BeanWrapper
         MyBeanWrapper beanWrapper = new MyBeanWrapper(instance);
         //4、保存到IoC容器
         factoryBeanInstanceCache.put(beanName, beanWrapper);
@@ -157,4 +158,15 @@ public class MyApplicationContext {
         return instance;
     }
 
+    public int getBeanDefinitionCount() {
+        return beanDefinitionMap.size();
+    }
+
+    public String[]  getBeanDefinitionNames() {
+        return beanDefinitionMap.keySet().toArray(new String[this.getBeanDefinitionCount()]);
+    }
+
+    public Properties getConfig() {
+        return reader.getConfig();
+    }
 }
