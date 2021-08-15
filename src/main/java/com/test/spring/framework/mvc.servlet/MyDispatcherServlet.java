@@ -2,7 +2,6 @@ package com.test.spring.framework.mvc.servlet;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,7 +16,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.test.demo.action.MyAction;
 import com.test.spring.framework.annocation.MyController;
 import com.test.spring.framework.annocation.MyRequestMapping;
 import com.test.spring.framework.context.MyApplicationContext;
